@@ -7,3 +7,7 @@
 # Allow .pas and .pdf files in subfolders
 !/**/*.pas
 !/**/*.pdf
+
+# Exept precedencia.pas and allow executable
+!precedencia
+precedencia.pas

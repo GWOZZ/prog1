@@ -123,7 +123,7 @@ alias rma='find . -type f ! -name "*.*" -exec rm {} +'
 alias p1='cd prog1/practicos/'
 alias lsv='ls -v'
 alias pdf='wslview "$(pwd)"/*.pdf'
-
+alias prec='~/prog1/precedencia'
 p() {
     local dir=~/prog1/practicos/prac"$1"
     if [ ! -d "$dir" ]; then
