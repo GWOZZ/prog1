@@ -1,4 +1,9 @@
-*
-!*.lib
-!*.pas
-!*.pdf
+# Ignore everything
+/*
+
+# Except for subfolders
+!/*/
+
+# Allow .pas and .pdf files in subfolders
+!/**/*.pas
+!/**/*.pdf
