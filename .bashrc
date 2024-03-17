@@ -120,7 +120,6 @@ fi
 
 alias clr='clear'
 alias rma='find . -type f ! -name "*.*" -exec rm {} +'
-alias p1='cd prog1/practicos/'
 alias lsv='ls -v'
 alias pdf='wslview "$(pwd)"/*.pdf'
 alias prec='~/prog1/precedencia'
