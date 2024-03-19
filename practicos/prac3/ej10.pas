@@ -14,5 +14,5 @@ begin
         if peso <= 1 then
             writeln(peso:0:2, ' $', base)
         else
-            writeln(peso:0:2, ' $', base + (round(peso - 0.5) * adic))
+            writeln(peso:0:2, ' $', base + (trunc(peso) * adic))
 end.
