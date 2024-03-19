@@ -1,6 +1,7 @@
 program ej10;
 const
     base = 77;
+    adic = 56;
 var
     peso : real;
 begin
@@ -13,5 +14,5 @@ begin
         if peso <= 1 then
             writeln(peso:0:2, ' $', base)
         else
-            writeln(peso:0:2, ' $', base + (round((peso - 1) + 0.5) * 56))
+            writeln(peso:0:2, ' $', base + (round(peso - 0.5) * adic))
 end.
