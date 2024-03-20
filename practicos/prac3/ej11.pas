@@ -1,6 +1,6 @@
 program ej11;
 var
-    a, b, c, d, dig : char;
+    a, b, c, d, dig: char;
 begin
     write('Ingrese un entero de 4 digitos: ');
     readln(a, b, c, d);
