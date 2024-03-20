@@ -1,26 +1,31 @@
 program ej11;
 var
-    n, d: integer;
+    a, b, c, d, dig : char;
 begin
     write('Ingrese un entero de 4 digitos: ');
-    readln(n);
+    readln(a, b, c, d);
     write('Ingrese un entero de 1 digitos: ');
-    readln(d);
-    writeln(n);
-    if n div 1000 = d then
-        write('+')
+    readln(dig);
+    if (a = dig) or (b = dig) or (c = dig) or (d = dig) then
+        begin
+            writeln(a, b, c, d);
+            if a = dig then
+                write('+')
+            else
+                write(' ');
+            if b = dig then
+                write('+')
+            else
+                write(' ');
+            if c = dig then
+                write('+')
+            else
+                write(' ');
+            if d = dig then
+                writeln('+')
+            else
+                writeln(' '); 
+        end
     else
-        write(' ');
-    if n div 100 mod 10 = d then
-        write('+')
-    else
-        write(' ');
-    if n div 10 mod 10 = d then
-        write('+')
-    else
-        write(' ');
-    if n mod 10 = d then
-        writeln('+')
-    else
-        writeln(' '); 
+        writeln(dig, ' no está en ', a, b, c, d)
 end.
