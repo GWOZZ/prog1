@@ -6,8 +6,7 @@ begin
     res := 1;
     write('Ingrese un valor para n: ');
     readln(n);
-    if (n <> 0) and (n <> 1) then
-        for i := n downto 1 do
-            res := res * i;
+    for i := n downto 1 do
+        res := res * i;
     writeln('El factorial de ', n, ' es ', res)
 end.
