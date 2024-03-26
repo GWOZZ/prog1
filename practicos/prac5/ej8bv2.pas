@@ -8,6 +8,8 @@ begin
     write('Inrgese operación a calcular: ');
     read(n1);
     read(op);
+    while op = ' ' do
+      read(op);
     if op <> '=' then
     repeat
     begin
@@ -18,7 +20,9 @@ begin
             '/' : n1 := n1 div n2;
             '-' : n1 := n1 - n2;
         end;
-        read(op)
+        read(op);
+        while op = ' ' do
+      		read(op);
     end;
     until op = '=';
     writeln(n1)
