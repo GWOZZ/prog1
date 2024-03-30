@@ -1,32 +1,32 @@
 program ej8a;
 var
-    c1, c2, op : char;
+    dig, op : char;
     n1, n2 : integer;
 begin
     n1 := 0;
     n2 := 0;
     write('Inrgese operación a calcular: ');
-    read(c1);
+    read(dig);
     repeat
-        n1 := n1 * 10 + ord(c1) - ord('0');
-        read(c1)
-    until (c1 < '0') or (c1 > '9');
-    op := c1;
+        n1 := n1 * 10 + ord(dig) - ord('0');
+        read(dig)
+    until (dig < '0') or (dig > '9');
+    op := dig;
     if op <> '=' then
     repeat
         n2 := 0;
-        read(c2);
+        read(dig);
         repeat
-        	n2 := n2 * 10 + ord(c2) - ord('0');
-            read(c2)
-        until (c2 = '+') or (c2 = '*') or (c2 = '/') or (c2 = '-') or (c2 = '=');
+        	n2 := n2 * 10 + ord(dig) - ord('0');
+            read(dig)
+        until (dig = '+') or (dig = '*') or (dig = '/') or (dig = '-') or (dig = '=');
         case op of
             '+' : n1 := n1 + n2;
             '*' : n1 := n1 * n2;
             '/' : n1 := n1 div n2;
             '-' : n1 := n1 - n2;
         end;
-        op := c2;
+        op := dig;
     until op = '=';
     writeln(n1)
 end.
