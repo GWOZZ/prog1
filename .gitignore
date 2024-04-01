@@ -1,9 +1,11 @@
 # Ignore everything
 /*
 
-# Except for subfolders
+# Except for subfolders, .pas and .pdf files
 !/*/
-
-# Allow .pas and .pdf files in subfolders
 !/**/*.pas
 !/**/*.pdf
+
+# Ignore precedencia.pas
+precedencia.pas
+
