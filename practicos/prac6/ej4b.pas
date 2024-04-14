@@ -11,13 +11,15 @@ begin
         for divisor := 2 to trunc(sqrt(num)) do
             if (num mod divisor) = 0 then begin
                 primo := false;
-                break;
             end;
         if primo then begin
-            write(num, ' ');
-        end;
+            writeln(contador, ': ', num, ' Raíz Cuadrada: ', sqrt(num):0:2);
+        end
+        else 
+            contador := contador - 1;
         num := num + 1;
     end;
 end.
+
 
 SIN TERMINAR
