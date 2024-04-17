@@ -1,11 +1,8 @@
-# Ignore everything
-/*
-
-# Except for subfolders, .pas and .pdf files
-!/*/
-!/**/*.pas
-!/**/*.pdf
-
-# Ignore precedencia.pas
-precedencia.pas
-
+# ignore everything
+*
+# don't ignore directories
+!*/
+# don't ignore file types
+!*.pas
+!*.pdf
+!*.gitignore

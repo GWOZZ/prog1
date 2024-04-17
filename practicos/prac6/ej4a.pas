@@ -1,4 +1,4 @@
-program ej4;
+program ej4a;
 var
     i, j, n, ultnum, factor: int64;
 begin
