@@ -6,3 +6,5 @@
 !*.pas
 !*.pdf
 !*.gitignore
+!*.py
+!*.txt
