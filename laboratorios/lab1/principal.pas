@@ -11,7 +11,7 @@ var
 
 begin
    write('Ingrese la oración: ');
-   leerOracionDatos(cantPal,masLarga,masCorta);
+   leerOracionDatos(cantPal, masLarga, masCorta);
    writeLn('Tiene ', cantPal:0, ' palabras.');
    writeLn('La palabra más larga tiene ', masLarga:0, ' letras.');
    writeLn('La palabra más corta tiene ', masCorta:0, ' letras.');

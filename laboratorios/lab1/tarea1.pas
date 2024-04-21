@@ -19,12 +19,12 @@ var
     fin : boolean;
 begin
     fin := false;
-    leerPalabraLargo(largo , fin);
+    leerPalabraLargo(largo, fin);
     max := largo;
     min := largo;
     cantPalabras := 1;
     while fin = false do begin
-        leerPalabraLargo(largo , fin);
+        leerPalabraLargo(largo, fin);
         cantPalabras := cantPalabras + 1;
         if largo < min then min := largo
         else if largo > max then max := largo
