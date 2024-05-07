@@ -4,12 +4,11 @@ var
 begin
     write('Ingrese m y n: ');
     readln(m, n);
-    write('El MCD es: ');
-    while n <> 0 do
-        begin
-            tmp := m;
-            m := n;
-            n := tmp mod n;
-        end;
+    write('MCD(', m, ', ', n, ') = ');
+    while n <> 0 do begin
+        tmp := m;
+        m := n;
+        n := tmp mod n;
+    end;
     writeln(m)
 end.
