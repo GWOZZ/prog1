@@ -19,7 +19,7 @@ begin
         repeat
         	n2 := n2 * 10 + ord(dig) - ord('0');
             read(dig)
-        until (dig = '+') or (dig = '*') or (dig = '/') or (dig = '-') or (dig = '=');
+        until (dig < '0') or (dig > '9');
         case op of
             '+' : n1 := n1 + n2;
             '*' : n1 := n1 * n2;
