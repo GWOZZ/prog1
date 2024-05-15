@@ -1,3 +1,4 @@
+program ej8;
 const
     N = ...; {valor mayor estricto a 1}
 type

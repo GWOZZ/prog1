@@ -14,9 +14,11 @@ begin
     ocurre := false;
     i := 1;
     repeat
-        j := 1;
-        while (arrN[i + j - 1] = arrM[j]) and (j <= M) do
+        j := 0;
+        while (j <= M) and (arrN[i + j] = arrM[j + 1]) do begin
             j := j + 1;
+            writeln(i)
+        end;
         if j > M then
             ocurre := true
         else
