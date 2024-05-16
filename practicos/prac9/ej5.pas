@@ -1,7 +1,7 @@
 program ej5;
 const 
-    M = 5; {valor mayor estricto a 1}
-    N = 6; {valor mayor estricto a M}
+    M = 3; {M > 0}
+    N = 10; {N > M}
 type
     CadenaM = array [1..M] of char;
     CadenaN = array [1..N] of char;
@@ -9,25 +9,22 @@ type
 function indiceSubCadena (arrM : CadenaM; arrN : CadenaN) : integer;
 var
     i, j: integer;
-    ocurre : boolean;
+    arrMtmp : CadenaM;
 begin
-    ocurre := false;
     i := 1;
     repeat
         j := 0;
-        while (j <= M) and (arrN[i + j] = arrM[j + 1]) do begin
+        repeat
             j := j + 1;
-            writeln(i)
-        end;
-        if j > M then
-            ocurre := true
-        else
+            arrMtmp[j] := arrN[j + i - 1]
+        until (arrMtmp[j] <> arrM[j]) or (j = M);
+        if arrMtmp[j] <> arrM[j] then
             i := i + 1
-    until (i > N) or ocurre;
-    if not ocurre then
-        indiceSubCadena := 0
-    else
+    until (arrMtmp = arrM) or (i > N - M + 1);
+    if arrMtmp = arrM then
         indiceSubCadena := i
+    else
+        indiceSubCadena := 0
 end;
 
 procedure leerCadenaM(var cadM : CadenaM);
@@ -36,7 +33,7 @@ var
 begin
     for i := 1 to M do
         read(cadM[i]);
-    writeln()
+    readln
 end;
 
 procedure leerCadenaN(var cadN : CadenaN);
@@ -45,13 +42,13 @@ var
 begin
     for i := 1 to N do
         read(cadN[i]);
-    writeln()
+    readln
 end;
 
 var
     cadM : cadenaM;
     cadN : CadenaN;
-    pos : integer;
+    pos, i : integer;
 begin
     write('Ingrese los ', M, ' caracteres de la cadena de largo M: ');
     leerCadenaM(cadM);
