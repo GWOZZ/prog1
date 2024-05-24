@@ -46,7 +46,7 @@ begin
     k := 1;
     for i := 1 to N do
         for j := i to N do begin
-            write('Ingrese valor para ', i, ' ', j, ': ');
+            write('Ingrese valor para [', i, ', ', j, ']: ');
             readln(arr[k]);
             k := k + 1
         end;

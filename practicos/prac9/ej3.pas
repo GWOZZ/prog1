@@ -28,7 +28,7 @@ begin
 end;
 
 procedure maxValorPos(cadn : CadenaN; var valor, pos : integer);
-var i, max : integer;
+var i : integer;
 begin
     valor := cadn[1];
     pos := 1;
