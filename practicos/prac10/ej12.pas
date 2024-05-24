@@ -48,5 +48,3 @@ begin
         writeln('ultima actualizacion :' ultimo_id.ultima_act)
     end
 end;
-
-
