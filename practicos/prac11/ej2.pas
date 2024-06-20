@@ -1,4 +1,4 @@
-program P11Ej2;
+program ej2;
 const 
     MAXPERSONAS = 20; {Entero >0}
     MAXCAD = 20; {Entero >0}
