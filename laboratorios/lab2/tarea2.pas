@@ -91,7 +91,7 @@ begin
         if not pc.esColumna then 
             txt := txt^.sig
     end;
-    pp.esPosicion := (txt <> nil);
+    pp.esPosicion := pc.esColumna;
     if pp.esPosicion then begin
         pp.p.linea := contador;
         pp.p.columna := pc.col
@@ -110,38 +110,44 @@ procedure insertarCadenaEnLinea (c : Cadena; columna : RangoColumna; var ln : li
                    columna <= MAXCOL
                    c.tope + columna <= MAXCOL   }  
 var
+    nuevoformato : Formato;
     tfmt : TipoFormato;
-    i, j : integer;
+    i : integer;
 begin
     pln.esLinea := (c.tope + ln.tope > MAXCOL);
     if pln.esLinea then begin
-        pln.l.tope := ln.tope + c.tope - MAXCOL;
-        j := 0;
-        for i := ln.tope downto columna do begin
-            pln.l.cars[pln.l.tope - j] := ln.cars[i];
-            j := j + 1
-        end;
-        for i := (pln.l.tope - j) downto 1 do begin
-            pln.l.cars[i].car := c.cars[c.tope - i + 1];
-            pln.l.cars[i].fmt := ln.cars[columna].fmt
-        end;
-        for i := 1 to (c.tope - j) do begin
-            ln.cars[columna + i - 1].car := c.cars[i];
-            ln.cars[columna + i - 1].fmt := ln.cars[columna].fmt
-        end
+        if columna = ln.tope + 1 then
+            for tfmt := Neg to Sub do
+                nuevoformato[tfmt] := false
+        else
+            nuevoformato := ln.cars[columna].fmt;
+        for i := ln.tope downto columna do
+            if i + c.tope <= MAXCOL then
+                ln.cars[i + c.tope] := ln.cars[i]
+            else
+                pln.l.cars[i + c.tope - MAXCOL] := ln.cars[i];
+        for i := 1 to c.tope do
+            if columna + i - 1 <= MAXCOL then begin
+                ln.cars[columna + i - 1].car := c.cars[i];
+                ln.cars[columna + i - 1].fmt := nuevoformato
+            end
+            else begin
+                pln.l.cars[columna + i - 1 - MAXCOL].car := c.cars[i];
+                pln.l.cars[columna + i - 1 - MAXCOL].fmt := nuevoformato
+            end;
+        pln.l.tope := c.tope + ln.tope - MAXCOL;
+        ln.tope := MAXCOL
     end
     else begin
         for i := ln.tope downto columna do
             ln.cars[i + c.tope] := ln.cars[i];
-        j := 1;
         for i := columna to (columna + c.tope - 1) do begin
-            ln.cars[i].car := c.cars[j];
+            ln.cars[i].car := c.cars[i - columna + 1];
             if columna <= ln.tope then
                 ln.cars[i].fmt := ln.cars[columna].fmt
             else
                 for tfmt := Neg to Sub do
-                    ln.cars[i].fmt[tfmt] := false;
-            j := j + 1
+                    ln.cars[i].fmt[tfmt] := false
         end;
         ln.tope := ln.tope + c.tope
     end
