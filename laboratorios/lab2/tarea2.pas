@@ -159,24 +159,10 @@ procedure insertarLineaEnTexto (ln : Linea; nln : integer; var txt : Texto);
     Precondiciones: 1 < nln <= cantidad de líneas del texto + 1   }
 var
     aux1, aux2 : Texto;
-    lineastexto : integer; 
 begin
-    aux1 := txt;
-    lineastexto := 0;
-    while aux1 <> nil do begin
-        aux1 := aux1^.sig;
-        lineastexto := lineastexto + 1
-    end;
-    if nln = lineastexto + 1 then begin
-        new(aux1);
-        ubicarLineaEnTexto(txt, lineastexto)^.sig := aux1;
-        aux1^.info := ln
-    end
-    else begin
-        aux1 := ubicarLineaEnTexto(txt, nln);
-        new(aux2);
-        ubicarLineaEnTexto(txt, nln - 1)^.sig := aux2;
-        aux2^.info := ln;
-        aux2^.sig := aux1
-    end
+    aux1 := ubicarLineaEnTexto(txt, nln);
+    new(aux2);
+    ubicarLineaEnTexto(txt, nln - 1)^.sig := aux2;
+    aux2^.info := ln;
+    aux2^.sig := aux1
 end;
