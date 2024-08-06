@@ -1,3 +1,0 @@
-Ingrese la oración: Tiene 4 palabras.
-La palabra más larga tiene 7 letras.
-La palabra más corta tiene 2 letras.

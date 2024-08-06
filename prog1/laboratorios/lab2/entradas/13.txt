@@ -1,5 +1,0 @@
-textos/texto1.txt
-
-100
-
-3
