@@ -1,3 +1,0 @@
-Ingrese la oración: Tiene 9 palabras.
-La palabra más larga tiene 23 letras.
-La palabra más corta tiene 1 letras.
